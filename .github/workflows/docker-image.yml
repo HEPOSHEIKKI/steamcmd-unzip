@@ -3,6 +3,12 @@ name: Publish Docker image
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run in'
+        type: environment
+        required: true
 
 jobs:
   push_to_registry:
